@@ -64,15 +64,15 @@ public class Base {
 
         if (count > 0) {
             System.out.println("Заполните массив");
-            String[] array = new String[count + 1];
+            String string = "";
             String maxString = "";
             int lengthMaxString = 0;
 
             for (int i = 0; i < count; i++) {
-                array[i] = scanner.next();
-                if (array[i].length() > lengthMaxString) {
-                    lengthMaxString = array[i].length();
-                    maxString = array[i];
+                string = scanner.next();
+                if (string.length() > lengthMaxString) {
+                    lengthMaxString = string.length();
+                    maxString = string;
                 }
             }
             System.out.println("Самое длинное слово в массиве: " + maxString);
