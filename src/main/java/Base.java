@@ -33,7 +33,7 @@ public class Base {
         double j = scanner.nextDouble();
 
         System.out.println("Введите операцию калькулятора:\n 1 - умножение,\n 2 - сложение,\n" +
-                                                           " 3 - вычитание,\n 4 - деление");
+                " 3 - вычитание,\n 4 - деление");
         int math_oper = scanner.nextInt();
 
         System.out.println("Результат операции ");
@@ -64,18 +64,25 @@ public class Base {
 
         if (count > 0) {
             System.out.println("Заполните массив");
-            String string = "";
-            String maxString = "";
             int lengthMaxString = 0;
+            String[] array = new String[count];
 
-            for (int i = 0; i < count; i++) {
-                string = scanner.next();
-                if (string.length() > lengthMaxString) {
-                    lengthMaxString = string.length();
-                    maxString = string;
+            for (int i = 0; i < array.length; i++) {
+                array[i] = scanner.next();
+
+                if (array[i].length() > lengthMaxString) {
+                    lengthMaxString = array[i].length();
                 }
             }
-            System.out.println("Самое длинное слово в массиве: " + maxString);
+
+            System.out.print("Самое длинное слово(а) в массиве: ");
+
+            for (int i = 0; i < array.length; i++) {
+                if (array[i].length() == lengthMaxString) {
+                    System.out.print(array[i] + " ");
+                }
+            }
+
         } else System.out.println("В пустом массиве отсутствует понятие самого длинного слова");
     }
 }
